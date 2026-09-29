@@ -36,6 +36,8 @@ When I first started the RHEL VM in Hyper-V, the VM displayed:
 Start PXE over IPv4
 ```
 
+![Hyper-V Start PXE over IPv4](screenshots/hyper-v-pxe.boot.png)
+
 This occurred because Hyper-V could not find a bootable device and attempted to boot from the network using PXE.
 
 ### Resolution
