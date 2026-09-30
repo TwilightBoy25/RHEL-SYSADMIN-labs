@@ -55,5 +55,7 @@ To change how the shell finds an external command, use "$PATH" variable. It defi
 
 To find EXACTLY which command the shell will use, use the "which" command. 
 
+![Typing which ls in the terminal](screenshots/which_ls.png)
+
 
 
