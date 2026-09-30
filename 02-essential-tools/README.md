@@ -40,3 +40,6 @@ How the shells does that, interprets the command in three distinct ways.
 2. Internal Commands
 3. External Commands
 
+Alias is a command that a user can define as needed. Typing "alias" in the command line will show an overview of it. 
+![Typing alias RHEL](screenshots/alias_overview.png)
+
