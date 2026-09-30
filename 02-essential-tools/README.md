@@ -49,3 +49,6 @@ External command is a command that exist as an executable file on the disk of a 
 
 To find out if a command is an internal command or an external command you can use the type command
 
+![Typing type pwd in the terminal](screenshots/type_pwd.png)
+
+
