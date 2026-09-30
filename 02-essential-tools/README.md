@@ -57,5 +57,6 @@ To find EXACTLY which command the shell will use, use the "which" command.
 
 ![Typing which ls in the terminal](screenshots/which_ls.png)
 
+A stronger command is "type". Which will also work on internal commands and aliases. 
 
 
