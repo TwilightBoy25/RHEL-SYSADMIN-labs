@@ -51,4 +51,9 @@ To find out if a command is an internal command or an external command you can u
 
 ![Typing type pwd in the terminal](screenshots/type_pwd.png)
 
+To change how the shell finds an external command, use "$PATH" variable. It defines for a list of directories for the matching filename when a user enters a command. 
+
+To find EXACTLY which command the shell will use, use the "which" command. 
+
+
 
