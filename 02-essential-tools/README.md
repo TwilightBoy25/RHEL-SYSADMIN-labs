@@ -43,3 +43,9 @@ How the shells does that, interprets the command in three distinct ways.
 Alias is a command that a user can define as needed. Typing "alias" in the command line will show an overview of it. 
 ![Typing alias RHEL](screenshots/alias_overview.png)
 
+Internal command, also known as/referred to a shell builtin. It is apart of the shell itself, so it doesn't have to be loaded from disk separately. 
+
+External command is a command that exist as an executable file on the disk of a computer
+
+To find out if a command is an internal command or an external command you can use the type command
+
