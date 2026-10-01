@@ -245,3 +245,18 @@ I have listed the most essential vim commands to know below according to the boo
 | !ls | Adds the output of ls (or any other command) in the current file. |
 | :%s/old/new/g | Replaces all occurrences of old with new. |
 
+
+## Editing Files with nano
+
+Using nano is apparently straightforward. Start typing the name of the command, followed by the name of the file you'd like to edit.
+
+Example:
+
+'nano myfile' 
+
+I should see all the available commands on the lower part of the terminal.
+
+<img width="1270" height="845" alt="Screenshot 2026-10-01 at 3 03 23 PM" src="https://github.com/user-attachments/assets/41a65e12-1523-470c-878c-fd05c5d45a26" />
+
+
+
