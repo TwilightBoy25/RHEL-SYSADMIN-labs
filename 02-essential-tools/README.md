@@ -8,6 +8,7 @@ To learn the basic Linux skills needed to take the RHCSA exam.
 
 - Basic Shell Skills
 - Editing Files with vim
+- Editing Files with nano
 - Understanding the Shell Environment
 
 ## Understanding Commands
