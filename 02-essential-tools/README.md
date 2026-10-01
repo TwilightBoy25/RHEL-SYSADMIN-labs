@@ -67,8 +67,74 @@ echo $PATH types out the contents of the $PATH variable
 The computer monitor is used as the standard destination for output = STDOUT 
 The shell also has default standard destinations to send errors messages to (STDERR) and to accept input (STDIN)
 
+Linux commands use three standard data streams:
+
 | Name | Default Destination | Use in Redirection | File Descriptor Number |
 | --- | --- | --- | --- |
 | STDIN | Computer keyboard | `<` (same as `0<`) | 0 |
 | STDOUT | Computer monitor | `>` (same as `1>`) | 1 |
 | STDERR | Computer monitor | `2>` | 2 |
+
+### Standard Input (STDIN) - 0
+
+STDIN is the information that a command receives as input.
+
+By default, STDIN normally comes from the keyboard.
+
+The '<' operator can redirect input so that a command receives its input from a file instead. 
+
+Example: 
+
+'command < input.txt'
+
+Instead of waiting for keyboard input, the command receives its input from 'input.txt'
+
+### Standard output (STDOUT) - 1
+
+STDOUT is the normal output produced by a command.
+
+By default, STDOUT is displayed on the terminal
+
+The '>' operate redirects STDOUT to a file
+
+Example: 
+
+'ls /etc > files.txt'
+
+Instead of displaying the standard destination to the monitor as its standard output, the normal output is written to 'files.txt'
+
+'>' is equivalent to '1>' because STDOUT uses file descriptor 1.
+
+Example:
+
+'ls /etc 1> files.txt'
+
+### Standard Error (STDERR) - 2
+
+STDERR contains error messasges produced by a command.
+
+By default, STDERR is also displayed on the monitor/terminal, but Linux treats it separately from STDOUT.
+
+The '2>' operator redirects error messages to a file.
+
+Example:
+
+'ls /doesnotexist 2> errors.txt'
+
+The error message will not display onto the terminal, instead error message is written to 'errors.txt'.
+
+### Mental Model
+
+'0 = IN'
+'1 = OUT'
+'2 = ERROR'
+
+Redirection lets you change where input comes from or where output goes.
+
+Normally:
+
+Keyboard -> STDIN -> Command -> STDOUT/STDERR -> Terminal
+
+With redirection:
+
+File -> STDIN -> Command -> STDOUT/STDERR - File
