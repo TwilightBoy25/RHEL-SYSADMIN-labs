@@ -138,3 +138,7 @@ Keyboard -> STDIN -> Command -> STDOUT/STDERR -> Terminal
 With redirection:
 
 File -> STDIN -> Command -> STDOUT/STDERR - File
+
+## Using Pipes 
+
+
