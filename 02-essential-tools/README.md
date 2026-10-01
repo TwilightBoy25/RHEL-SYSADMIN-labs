@@ -141,4 +141,31 @@ File -> STDIN -> Command -> STDOUT/STDERR - File
 
 ## Using Pipes 
 
+A pipe ('|') takes the STDOUT of one command and uses it as the STDIN of another command. This allows multiple to work together.
 
+Example:
+
+ls -R / | less
+
+In this command, the output of 'ls -R /' becomes the input for 'less', allowing the results to be viewed and scrolled through more easily
+
+### My Mental Model
+
+Command 1 -> STDOUT -> | STDIN -> Command 2
+
+By default, a pipe connects STDOUT (1) of the first command to STDIN (0) of the second command. STDERR (2) is not automatically sent through the pipe.
+
+### Bash History
+
+Bash history keeps track of commands that have been executed, making it easier to find and reuse commands.
+
+During an active shell session, command history is stored in memory. When the session is closed, the history is then saved to '.bash_history' file located in the user's home directory. 
+
+| Command | Description | 
+| --- | --- |
+| 'history' | Displays previously executed commands |
+| 'Ctrl-R' | Reverse searches through command history |
+| '!text' | Executes the most recent command beginning with the specified text |
+| 'history -d number' | Deletes the specified number in the history entry |
+| 'history -c' | Clears the current in-memory history |
+| 'history -w' | Writes the current history to '.bash_history' |
