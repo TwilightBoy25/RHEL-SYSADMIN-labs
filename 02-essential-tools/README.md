@@ -204,4 +204,44 @@ The 'history' command sends its STDOUT through the pipe ('|') to 'grep', which r
 
 ## Bash Completion
 
+The feature command-line completion helps you find the command that you need. 
+
+Example:
+
+Typing 'fd' in your terminal and then pressing tab, it will generate the commands that start with 'fd'.
+
 <img width="237" height="70" alt="Screenshot 2026-10-01 at 2 20 34 PM" src="https://github.com/user-attachments/assets/d0cbb423-fdbe-4d0e-a2a7-565d1f37fbc2" />
+
+## Editing Files with vim
+
+When working with vim it is important to know that it uses two different modes. Known as command mode and input mode. 
+
+In command mode, you can just enter a command, but you cannot edit the contents of a text file.
+
+In order to change the contents of a text file, you need to get into input mode. 
+
+I have listed the most essential vim commands to know below. 
+
+| vim Command | Explanation |
+| --- | --- |
+| Esc | Switches from input mode to command mode. Press this key before typing any command. |
+| i, a | Switches from command mode to input mode at (i) or after (a) the current cursor position. |
+| o | Opens a new line below the current cursor position and goes to input mode.  |
+| :wq | Write the current file and quits. |
+| :q! | Quits the file without applying any changes. The '!' forces the command to do its work. The book recommends to only use '!' when I really k now what I am doing. |
+| :w filename | Writes the current file with a new filename. |
+| dd | Deletes the current line and places the contents of the deleted line into memory. |
+| yy | Copies the current line. |
+| p | Pastes the contents that have been cut or copied into memory. |
+| v | Enters visual mode, which allows me to select a block of text using the arrow keys. Use 'd' to cut the selection or 'y' to copy it. |
+| u | Undoes the last command. Repeat as often as necessary. |
+| Ctrl-R | Redoes the last undo (Cannot be repeated more than once.) |
+| gg | Goes into the first line of the document. |
+| G | Goes into the last line of the dcoument. |
+| /text | Searches for text from the current cursor position forward. |
+| ?text | Searches for text form the current cursor position backward. |
+| ^ | Goes to the first position in the current line. |
+| $ | Goes to the last position in the current line. |
+| !ls | Adds the output of ls (or any other command) in the current file. |
+| :%s/old/new/g | Replaces all occurrences of old with new. |
+
