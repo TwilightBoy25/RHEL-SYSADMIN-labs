@@ -258,5 +258,21 @@ I should see all the available commands on the lower part of the terminal.
 
 <img width="1270" height="845" alt="Screenshot 2026-10-01 at 3 03 23 PM" src="https://github.com/user-attachments/assets/41a65e12-1523-470c-878c-fd05c5d45a26" />
 
+## Understanding the Shell Environment
+
+### Understanding Variables
+
+Variables that are set in a user environment will differ user to user. 
+
+To assign a variable you use the '=' 
+
+To read the value of a variable I can use the 'echo' command 
+
+Example:
+
+'echo $PATH' 
+
+### Recognizing Environment Configuration Files
+
 
 
