@@ -169,3 +169,39 @@ During an active shell session, command history is stored in memory. When the se
 | 'history -d number' | Deletes the specified number in the history entry |
 | 'history -c' | Clears the current in-memory history |
 | 'history -w' | Writes the current history to '.bash_history' |
+
+'!number' and '!text' should be used carefully because the matching command is executed immediately.
+
+### In-Memory vs. Saved History
+
+Commands from the current shell are initially stored in memory:
+
+'Current Shell -> In-Memory History -> .bash_history'
+
+Because active shells maintain their own history, commands entered in one terminal may not immediately appear in another terminal.
+
+Running:
+
+'history -c'
+
+clears the current in-memory history but does not automatically erase commands already stored in '.bash_history'.
+
+To clear the current history and write the cleared history to the history file:
+
+'history -c'
+
+'history -w'
+
+### History with Pipes
+
+History can also be combined with other Linux commands.
+
+Example:
+
+'history | grep cat'
+
+The 'history' command sends its STDOUT through the pipe ('|') to 'grep', which receives it as STDIN and displays only history entries containing 'cat'.
+
+## Bash Completion
+
+<img width="237" height="70" alt="Screenshot 2026-10-01 at 2 20 34 PM" src="https://github.com/user-attachments/assets/d0cbb423-fdbe-4d0e-a2a7-565d1f37fbc2" />
