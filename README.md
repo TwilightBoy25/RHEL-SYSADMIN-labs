@@ -4,6 +4,10 @@ This repository documents my hands-on experience learning Red Hat Enterprise Lin
 
 Rather than document theory alone, this repository focuses on practical labs, commands, troubleshooting, and sytem configuration performed in my RHEL lab environment.
 
+## Study Source 
+
+- Red hat RHCSA 10 Cert Guide: EX200
+  
 ## Lab Environment
 
 - Red Hat Enterprise Linux
