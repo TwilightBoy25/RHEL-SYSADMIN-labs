@@ -67,8 +67,8 @@ echo $PATH types out the contents of the $PATH variable
 The computer monitor is used as the standard destination for output = STDOUT 
 The shell also has default standard destinations to send errors messages to (STDERR) and to accept input (STDIN)
 
-| Name | Default Destination | Use in Redirection | File Descriptor Number
-| STDIN| Computer keyboard | <(same as 0<) | 0
-| STDOUT| Computer monitor | >(same as 1>) | 1
-| STDERR | Computer monitor | 2> | 2
-
+| Name | Default Destination | Use in Redirection | File Descriptor Number |
+| --- | --- | --- | --- |
+| STDIN | Computer keyboard | `<` (same as `0<`) | 0 |
+| STDOUT | Computer monitor | `>` (same as `1>`) | 1 |
+| STDERR | Computer monitor | `2>` | 2 |
