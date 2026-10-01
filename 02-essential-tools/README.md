@@ -220,7 +220,7 @@ In command mode, you can just enter a command, but you cannot edit the contents 
 
 In order to change the contents of a text file, you need to get into input mode. 
 
-I have listed the most essential vim commands to know below. 
+I have listed the most essential vim commands to know below according to the book. 
 
 | vim Command | Explanation |
 | --- | --- |
