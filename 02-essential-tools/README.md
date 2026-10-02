@@ -374,4 +374,9 @@ Example:
 | Display a variable's value | echo $VARIABLE | $ = get the value |
 | Search your command history | history/ Ctrl-R | Previous commands |
 
+Distinction for me to memorize & understand
 
+|Syntax | What Bash searches for | Executes it? |
+| --- | --- | --- |
+| !text | Most recent command that start with text | Yes
+| !?text? | Most recent command that contains text ANYWHERE | Yes
