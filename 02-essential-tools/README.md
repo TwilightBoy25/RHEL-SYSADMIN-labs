@@ -275,4 +275,103 @@ Example:
 ### Recognizing Environment Configuration Files
 
 
+The Linux shells uses an environment containing variables that define settings for the current user and shell.
+
+Variables consist of a name and an assigned value.
+
+Example:
+
+'LANG=en_US.UTF-8'
+
+To display the current environment variables:
+
+'env'
+
+To display the value of a specific variable, use 'echo' with '$' before the variable name:
+
+'echo $LANG'
+
+'echo $PATH'
+
+'echo $HOME'
+
+The '$' tells Bash to retrieve the value stored inside the variable.
+
+### Temporary Variables
+
+A variable can be assigned directly from the shell:
+
+'LANG=es_ES.UTF-8'
+
+This changes the variable for the current shell environment. If the settings is not added to the appropriate configuration file, it will not persist as a permanent user configuration. 
+
+### Shell Configuration Files
+
+Linux uses configuration files to establish the environment when shells are started.
+
+| Configuration File | Purpose |
+| --- | --- |
+| '/etc/profile' | System-wide login shell configuration |
+| '/etc/bashrc' | System-wide subshell configuration |
+| '~/.bash_profile' | User-specific login shell configuration |
+| '~/.bashrc' | User-specific subshell configuration | 
+
+A mental note for myself. 
+
+'/etc/' -> System-wide settings
+
+'~/' -> User-specific settings
+
+'profile' -> Login shell
+
+'bashrc -> Subshell
+
+For custom system-wide profile settings, configuration files can be placed in:
+
+'/etc/profile.d/'
+
+This avoids directly modifying '/etc/profile'.
+
+### Login Messages 
+
+Linux can display messages to users during the login process:
+
+| File | When Displayed |
+| --- | --- |
+| '/etc/issue' | Before a text-based login |
+| '/etc/motd' | After a successful login |
+
+### nano
+
+'nano' is a command-line text editor that allows text to be entered immediately without switching between command and input modes.
+
+Open a file:
+
+'nano filename'
+
+In nano:
+
+- '^' represents the **Ctrl** key.
+- 'M' represents the **Meta key**
+- 'Crtl-X' exits nano and, when necessary, prompts to save changes.
+
+## Finding Help
+
+The quickest way in getting help on a command is by using 'command --help'
+
+Example: 
+
+'fdisk --help'
+
+| What are you trying to do? | Command | Mental Shortcut |
+| --- | --- |
+| Find a command when you only know a keyword | man -k keyword | Search man pages |
+| Read the manual for a command you already know | man command | Read the manual |
+| Read Texinfo documentation | info command | Info/Texinfo |
+| Update the man-page keyword database | mandb | Man database |
+| See a short description | whatis command | What is this? |
+| Display your shell environment | env | Environment |
+| Display a variable's value | echo $VARIABLE | $ = get the value |
+| Search your command history | history/ Ctrl-R | Previous commands |
+
 
