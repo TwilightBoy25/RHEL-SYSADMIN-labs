@@ -364,7 +364,7 @@ Example:
 'fdisk --help'
 
 | What are you trying to do? | Command | Mental Shortcut |
-| --- | --- |
+| --- | --- | --- |
 | Find a command when you only know a keyword | man -k keyword | Search man pages |
 | Read the manual for a command you already know | man command | Read the manual |
 | Read Texinfo documentation | info command | Info/Texinfo |
