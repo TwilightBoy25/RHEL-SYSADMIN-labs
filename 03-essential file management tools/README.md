@@ -36,3 +36,23 @@ The table I have created below are the most significant directories that I will 
 | /root | Specifies the home directory of the root user. |
 | /run | Contains process and user-specific information that has been created since the last boot. |
 | /srv | May be used for data by services like NFS, FTP, and HTTP. |
+| /sys | Used as an interface to different hardware devices that are managed by the Linux kernel and associated processes. |
+| /tmp | Contains temporary files that may be deleted without any warning during boot. |
+| /usr | Contains subdirectories with program files, libraries for these program files, and documentation about them. |
+| /var | Contains files that may change in size dynamically, such as log files, mail boxes, and spool files. |
+
+### Understanding Mounts
+
+To be able to understand the organization of Linux files it is paramount to understand the concept of mounting. 
+
+A mount is a connection between a device and a directory. 
+
+Mounting devices making it possible to organize the Linux file system in a flexible way.
+
+Below I am listing several good reasons to work with multiple mounts:
+
+1. High activity in one area may fill up the entire file system, which will negatively impact serices running on the server.
+2. If all files are on the same device, it is difficult to secure access and distinguish between different areas of the file system with different security needs. By mounting a separate file system, you can add mount options to meet specific security needs, such as the noexec option, which disallows running any executable file, which may make sense in user home directories.
+3. If a one-device file system is completely filled, it may be difficult to make additional storage space available. 
+
+To avoid these pitfalls, it is common to organize Linux file systems in different devices 
