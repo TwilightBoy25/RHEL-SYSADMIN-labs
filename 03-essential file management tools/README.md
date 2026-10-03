@@ -376,6 +376,16 @@ Options can be combined:
 - '-r' = recursive
 - '-f' = force
 
+## Using Links
 
+### Understanding Hard Links and Symbolic (soft) links
+
+| | Hard Link | Symbolic Link |
+| --- | --- | --- |
+| Points to | Same inode | Pathname |
+| Cross filesystems? | no | yes |
+| Link directories? | no | yes |
+| Target filename removed? | Other hard link still works | Symlink may break |
+| Command | ln | ln -s |
 
 
