@@ -200,4 +200,34 @@ Relative pathnames do **not** begin with '/'.
 
 | Symbol | Meaning |
 | --- | --- |
+| '.' | Current directory |
+| '..' | Parent directory |
+| 'pwd' | Displays the current working directory |
 
+Example: 
+
+If the current directory is:
+
+'/home/student/labs'
+
+Then:
+
+'../notes'
+
+resolves to:
+
+'/home/student/notes'
+
+Each '...' moves up **one level** in the directory hierarchy.
+
+### Mental Model
+
+'/' at beginning -> Absolute -> Start from root
+
+No '/' at beginning -> Relative -> Start from current directory
+
+'.' -> Here
+
+'..' -> Up one level
+
+'pwd' -> Where am I?
