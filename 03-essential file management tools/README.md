@@ -132,6 +132,8 @@ Listed below are common file management tasks that I need to be able to perform 
 6.  Moving files and directories
 7.  Deleting files and directories
 
+### Working with Wildcards
+
 Wildcard: A shell feature that is able to let you refer to multiple files in an easy way.
 
 | Wildcard | Use |
@@ -139,5 +141,25 @@ Wildcard: A shell feature that is able to let you refer to multiple files in an 
 | * | Refers to an unlimited number of any characters. ls *, for instance shows all files in the current directory (except those that have a name starting with a dot) |
 | ? | Refers to one specific character that can be any character. ls c?t would match cat as well as cut. |
 | [auo] | Refers to one character that may be selected from the range that is specified between square brackets. ls c[aou]t would match cat, cut, and cot. |
+
+### Managing and Working with Directories
+
+To organize files, Linux works with directories (also referred to as folders). 
+With me becoming an administrator, I have to be able to navigate through the directory structure. 
+
+* -> any number of characters
+? -> exactly one character
+[...] -> one character from specified choices
+
+pwd -> "Where am I?"
+cd -> "Move me"
+touch -> "Create an empty file"
+mkdir -> "Create directory"
+rmdir -> "Remove empty directory"
+
+starts with '/' -> absolute path
+doesn't start with '/' -> potentially relative to current location
+
+### Working with Absolute and Relative Pathnames
 
 
