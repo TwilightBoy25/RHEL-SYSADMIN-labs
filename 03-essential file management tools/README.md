@@ -119,3 +119,25 @@ Physical/logical storage -> Block Device -> File System -> Mount -> Mount Point 
 'df -Th' -> "How much file system space is used, and what type is it?"
 'findmnt' -> "What is mounted where, and how are the mounts related?"
 'lsblk' -> "What block storage devices does the system have?"
+
+## Managing Files
+
+Listed below are common file management tasks that I need to be able to perform as an administrator:
+
+1. Working with wildcards
+2.  Managing and working directories
+3.  Working with absolute and relative pathnames
+4.  Listing files and directories
+5.  Copying files and directories
+6.  Moving files and directories
+7.  Deleting files and directories
+
+Wildcard: A shell feature that is able to let you refer to multiple files in an easy way.
+
+| Wildcard | Use |
+| --- | --- |
+| * | Refers to an unlimited number of any characters. ls *, for instance shows all files in the current directory (except those that have a name starting with a dot) |
+| ? | Refers to one specific character that can be any character. ls c?t would match cat as well as cut. |
+| [auo] | Refers to one character that may be selected from the range that is specified between square brackets. ls c[aou]t would match cat, cut, and cot. |
+
+
