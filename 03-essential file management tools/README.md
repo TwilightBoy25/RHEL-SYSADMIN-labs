@@ -333,3 +333,49 @@ To preserve permissions and other important file properties:
   '*' -> Does not normally match hidden dotfiles
 
   Destination ending in '/' -> Expect destination to be a directory
+
+
+### Moving and Renaming Files and Directories
+
+The 'mv' command moves files and directories from one location to another.
+
+Syntax:
+
+'mv SOURCE DESTINATION'
+
+Move a file:
+
+'mv myfile /tmp/'
+
+Unlike 'cp', 'mv' does not require '-r' to move a directory and its contents.
+
+'mv' can also rename files:
+
+'mv myfile mynewfile'
+
+This renames 'myfile' to 'mynewfile'.
+
+### Deleting Files and Directories
+
+The 'rm' command removes files.
+
+'rm file1'
+
+To recursively remove a directory and everything inside it:
+
+'rm -r directory'
+
+The '-f' option means force:
+
+'rm -f file1'
+
+Options can be combined:
+
+'rm -rf directory;
+
+- '-r' = recursive
+- '-f' = force
+
+
+
+
