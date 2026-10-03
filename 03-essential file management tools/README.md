@@ -231,3 +231,16 @@ No '/' at beginning -> Relative -> Start from current directory
 '..' -> Up one level
 
 'pwd' -> Where am I?
+
+### Listing Files and Directories
+
+I will list in a table below of common arguments that make using ls command easier to work with 
+
+| Command | Use |
+| --- | --- |
+| ls -l | Shows a long listing, which includes information about file properties, such as creation date and permissions. |
+| ls -a | Shows all files, including hidden files. |
+| ls -lrt | The -t option shows commands sorted based on modification date. You'll see the most recently modified files last in the list because of the -r option. This is a very useful command. |
+| ls -d | Shows the names of directories, not the contents of all directories that match the wildcards that have been used with ls command. |
+| ls -R | Shows the contents of the current directory, in addition to all of its subdirectories; that is, it **R**ecursively descends all subdirectories. |
+
