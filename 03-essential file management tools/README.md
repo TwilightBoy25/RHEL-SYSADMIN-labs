@@ -162,4 +162,42 @@ doesn't start with '/' -> potentially relative to current location
 
 ### Working with Absolute and Relative Pathnames
 
+Linux uses absolute and relative pathnames to be able to locate files and directories.
+
+#### Absolute Pathname
+
+An absolute pathname gives the complete path to an item starting from the root directory ('/').
+
+Example: 
+
+'/home/student/files/document.txt'
+
+- Always begins with '/'
+- Does not depend on the current working directory
+- Refers to the same location regardless of where you currently are
+
+#### Relative Pathname
+
+A relative pathname describes the location of an item relative to the current working directory. 
+
+Example: 
+
+If the current working directory is:
+
+'/home/student'
+
+Then:
+
+'files/document.txt'
+
+refers to 
+
+'/home/student/files/document.txt'
+
+Relative pathnames do **not** begin with '/'.
+
+### Special Path References
+
+| Symbol | Meaning |
+| --- | --- |
 
