@@ -244,3 +244,92 @@ I will list in a table below of common arguments that make using ls command easi
 | ls -d | Shows the names of directories, not the contents of all directories that match the wildcards that have been used with ls command. |
 | ls -R | Shows the contents of the current directory, in addition to all of its subdirectories; that is, it **R**ecursively descends all subdirectories. |
 
+A hidden file on Linux is a file that has a name that starts with a dot. 
+
+### Copying Files and Directories
+
+The 'cp' command is used to copy files and directories.
+
+Basic syntax:
+
+'cp SOURCE DESTINATION'
+
+Example:
+
+'cp /etc/hosts /tmp/'
+
+This the '/etc/hosts' file into the '/tmp/' directory.
+
+### Import 'cp' Options
+
+| Option | Purpose |
+| --- | --- |
+| '-r' | Recursively copies a directory and everything inside it |
+| '-a' | Archive mode: recursively copies while preserving file properties. |
+
+Example:
+
+'cp -r /etc /tmp/'
+
+This copes the '/et' directory and everything beneath it into '/tmp/'.
+
+To preserve permissions and other important file properties:
+
+'cp -a /etc /tmp/'
+
+### '-r' vs '-a'
+
+'-r' -> Recursive copy
+
+- Copies directories
+- Copies files and subdirectories inside them
+
+  '-a' -> Archive copy
+
+  - Copies recursively
+  - Preserves important file properties such as permissions and metadata
+ 
+  Mental model:
+
+  '-r' -> "Copy the whole directory tree"
+  '-a' -> "Copy the whole directory tree while preserving its state"
+
+  ### Trailing Slash on the Destination
+
+  When the destination should be a directory, adding '/' makes that intention clear.
+
+  Example:
+
+  'cp /etc/hosts /tmp/'
+
+  The trailing '/' tells 'cp' that '/tmp' is expected to be a directory.
+
+  If the directory does not exist, the command will produce an error instead of accidentally creating a regular file with that name.
+
+  ### Hidden Files
+
+  Linux hidden files begin with a dot ('.').
+
+  Example:
+
+  '.bashrc'
+
+  A normal '*' wildcard does not normally match hidden files.
+
+  Because of this, hidden files require special attention when copying directory contents.
+
+  Archive mode ('cp -a') is useful when copying complete directory trees, including their hidden files.
+
+  ### Mental Model
+
+  'cp SOURCE DESTINATION'
+
+  'cp' -> Copy
+
+  '-r' -> Recursive
+
+  '-a' -> Archive + preserve properties
+
+  '*' -> Does not normally match hidden dotfiles
+
+  Destination ending in '/' -> Expect destination to be a directory
