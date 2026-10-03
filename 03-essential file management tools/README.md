@@ -388,4 +388,93 @@ Options can be combined:
 | Target filename removed? | Other hard link still works | Symlink may break |
 | Command | ln | ln -s |
 
+### Inodes and Links
 
+Linux uses **inodes** to store administrative information about files.
+
+An inode contains information such as:
+
+- File permissions
+- File ownership
+- Timestamps
+- Information needed to locate the file's data
+
+The **filename itself is not stored in the inode**.
+
+Mental model:
+
+'Filename -> Inode -> File data'
+
+A directory associates filenames with their inodes.
+
+### Hard Links
+
+A hard link is another filename that refers to the **same inode**
+
+Example:
+
+'ln file1 file2'
+
+Mental model:
+
+file1 --
+        |--> Same Inode -> Same Data 
+file2 __
+
+Because both names reference the same inode:
+
+- Changes made through one hard link are visible through the others.
+- Removing one hard link does not remove the data if another hard link still exists.
+- The file data become inaccessible once the last hard link is removed.
+
+Hard-link restrictions:
+
+- Must exist on the same filesystem/device
+- Normally cannot be created for directories
+
+### Symbolic Links
+
+A symbolic link (soft link) refers to the **pathname of another file or directory** instead of sharing its inode.
+
+Create one with:
+
+'ls -s SOURCE LINK'
+
+Mental model:
+
+'Symbolic Link -> Target Pathname -> Target File'
+
+Symbolic links:
+
+- Can cross filesystem/device boundaries
+- Can point to directories
+- Become broken/dangling if the target pathname no longer exists
+
+### Hard Link vs Symbolic Link
+
+| Hard Link | Symbolic Link |
+| --- | --- |
+| Same inode as target | Refers to target pathname |
+| Must remain on same filesystem | Can cross filesystems |
+| Normally cannot link directories | Can link directories |
+| Survives removal of another hard-link name | Can break if target disappears |
+| 'ln SOURCE LINK' | 'ln -s SOURCE LINK' |
+
+### Identifying Links
+
+Use: 'ls -l'
+
+A symbolic link begins with 'l' in the file type/permissions field and displays its target:
+
+'home -> /home'
+
+For hard-linked files, 'ls-l' displays the hard-link count.
+
+### Mental Model
+
+'ln' -> Hard link
+'ln -s' -> Symbolic (soft) link
+Hard link -> Same inode
+Soft link -> Pathname to target
+Hard link -> Target name removed? Other hard link still work
+Soft link -> Target removed? Link becomes broken
