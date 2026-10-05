@@ -478,3 +478,6 @@ Hard link -> Same inode
 Soft link -> Pathname to target
 Hard link -> Target name removed? Other hard link still work
 Soft link -> Target removed? Link becomes broken
+
+## Removing Links
+
