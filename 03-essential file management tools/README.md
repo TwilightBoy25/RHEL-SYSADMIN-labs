@@ -606,8 +606,7 @@ By itself, 'tar' creates an archive but does **not** compress it.
 Structure:
 
 '''bash
-tar -cvf ARCHIVE.tar SOURCE
-'''
+tar -cvf ARCHIVE.tar SOURCE'''
 
 
 
