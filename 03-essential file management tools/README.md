@@ -10,7 +10,7 @@
 ## RHCSA exam objectives are covered in this chapter
 
 - Create, delete, copy, and move files and directories
-- Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
+- Archive, compress, unpack, and uncompress files using tar, gzip, and bzip2
 - Create hard and soft links
 
 ## Working with the File System Hierarchy
