@@ -575,5 +575,39 @@ Restore target pathname -symlink can work again
 
 ## Working with Archives and Compressed Files
 
+### Archives
+
+An archive combines multiple files and directories into a single file. 
+
+The 'tar' command is commonly used to create and manage archives. 
+
+> 'tar' stans for ** Tape ARchiver**
+
+By itself, 'tar' creates an archive but does **not** compress it.
+
+### Common 'tar' Options
+
+| Option | Purpose |
+| --- | --- |
+| '-c' | Create an archive |
+| 'x' | Extract an arhive |
+| '-t' | List archive contents |
+| '-v' | Verbose output |
+| '-f' | Specify the archive file |
+| '-r' | Append files to an archive |
+| '-u' | Update files in an archive |
+| '-C' | Change directory for the operation |
+| '-z' | Use gzip compression |
+| '-j' | Uses bzip2 compression |
+| '-J' | Uses xz compression | 
+
+### Creating an Archive
+
+Structure:
+
+'''bash
+tar -cvf ARCHIVE.tar SOURCE
+'''
+
 
 
