@@ -606,7 +606,71 @@ By itself, 'tar' creates an archive but does **not** compress it.
 Structure:
 
 '''bash
-tar -cvf ARCHIVE.tar SOURCE'''
+tar -cvf ARCHIVE.tar SOURCE
+'''
+Example: 
+
+'''bash
+tar -cvf /root/systemfiles.tar /etc /var/log
+'''
+
+This creates 'systemfiles.tar' containing '/etc' and '/var/log'.
+
+### Viewing Archive Contents
+
+To see what is stored inside an archive without extracting it: 
+
+'''bash
+tar -tvf ARCHIVE.tar
+'''
+Example:
+
+'''bash
+tar -tvf /root/systemfiles.tar
+'''
+
+### Extracting an Archive
+
+Extract the entire archive into the current directory:
+
+'''bash
+tar -xvf ARCHIVE.tar
+'''
+
+Extract it into a specific directory:
+
+'''bash
+tar -xvf ARCHIVE.tar -C DESTINATION
+'''
+
+Example:
+
+'''bash
+tar -xvf /root/systemfiles.tar -C /tmp
+
+### Extracting a Specific File
+
+Structure:
+
+'''bash
+tar -xvf ARCHIVE.tar FILE
+
+Example:
+
+'''bash
+tar -xvf /root/systemfiles.tar etc/hosts
+'''
+
+Extract the specific file into another directory:
+
+'''bash
+tar -xvf ARCHIVE.tar FILE -C DESTINATION
+'''
+
+Important structure to remember:
+
+'''text
+tar -xvf [ARCHIVE] [WHAT TO EXTRACT] -C [DESTINATION] 
 
 
 
