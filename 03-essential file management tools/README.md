@@ -673,4 +673,110 @@ Important structure to remember:
 tar -xvf [ARCHIVE] [WHAT TO EXTRACT] -C [DESTINATION] 
 
 
+### Adding Files to an Existing Archive
+
+Append a file:
+
+'''bash
+tar -rvf ARCHIVE.tar FILE
+'''
+
+Update an archive with newer versions of files:
+
+'''bash
+tar -uvf ARCHIVE.tar SOURCE
+'''
+
+### Compression
+
+Compression reduces the amount of disk spaced used by a file.
+
+Common Linux compression utilities:
+
+| Utility | Extension |
+| --- | --- |
+| 'gzip' | '.gz' |
+| 'bzip2 | '.bz2' |
+| 'xz' | '.xz' |
+
+Compress an existing file:
+
+'''bash
+gzip archive.tar
+bzip2 archive.tar
+xz archive.tar
+'''
+
+These replace the original file with its compressed version. 
+
+Examples:
+
+'''text
+archive.tar -> archive.tar.gz
+archive.tar -> archive.tar.bz2
+archive.tar -> archive.tar.xz
+'''
+
+### Decompression Files
+
+'''bash
+gunzip archive.tar.gz
+bunzip2 archive.tar.bz2
+unxz archive.tar.xz
+'''
+
+### Creating a Compressed Archive with 'tar'
+
+Instead of creating an archive and compressing it separately, 'tar' can perform both operations.
+
+gzip:
+
+'''bash
+tar -czvf backup.tar.gz SOURCE
+'''
+
+bipz2:
+
+'''bash
+tar -cjvf backup.tar.bz2 SOURCE
+'''
+
+xz:
+
+'''bash
+tar -cJvf backup.tar.xz SOURCE
+'''
+
+Compression options:
+
+'''text
+-z = gzip
+-j = bzip2
+-J = xz
+
+
+### Checking a File Type
+
+The 'file' command can identify the actual type of a file:
+
+'''bash
+file archive.tar.gz
+'''
+
+This is useful when the filename or extension does not clearly identify the file type.
+
+## Key Takeaways
+
+- 'tar' combines files into an archive
+- An archive is not automatically compressed.
+- '-c' creates an archive
+- '-t' lists archive contents
+- '-x' extacts an archive
+- '-f' specifies the archive file
+- '-C' controls where files are extracted
+- 'gzip', 'bzip2', and 'xz' provide compression
+- 'tar' can create compressed archives directly using '-z', '-j', or '-J'
+
+  
+
 
