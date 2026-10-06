@@ -481,3 +481,99 @@ Soft link -> Target removed? Link becomes broken
 
 ## Removing Links
 
+A symbolic link can be removed with 'rm'.
+
+Example:
+
+'rm link'
+
+This removes the **symbolic link itself**, not the file or directory that the link points to.
+
+When removing symbolic links to directories, avoid unnecessarily using recursive or force options.
+
+Mental model: 
+
+'rm symlink' -> remove the link
+
+Do not treat a symbolic link like the directory it points to
+
+### Hard Links After Removing a Filename 
+
+Hard links are multiple filenames that reference the same inode. 
+
+Example: 
+
+'touch newfile'
+
+'ln newfile linkedfile'
+
+Mental model:
+
+new file. ----
+             | -> Same inode -> Same data
+linkedfile ---
+
+The hard0link count is now '2'.
+
+If:
+
+'rm newfile'
+
+is executed, 'linkedfile' still works because it still references the inode.
+
+The hard-link count decreases: 
+
+'2->1'
+
+The underlying data remains accessible until the last hard link is removed.
+
+### Symbolic Links After removing the Target
+
+Create a symbolic link:
+
+'ln -s newfile symlinkfile'
+
+A symbolic link refers to the target's **pathname**.
+
+If:
+
+'rm newfile'
+
+is executed, the symbolic link still exists, but its target pathname no longer exists. 
+
+'symlinkfile' -> newfile -> missing'
+
+The symbolic link is now **broken/dangling**.
+
+### Restoring the Target Path
+
+If 'linkedfile' is still a hard link to the original inode:
+
+'ln linkedfile newfile'
+
+creates another hard link named 'newfile'.
+
+The hard-link count returns:
+
+'1 -> 2'
+
+Because the pathname 'newfile' exists again, a symbolic link that points to 'newfile' can resolve again.
+
+### Mental Model
+
+Hard link -> references the same inode
+
+Symbolic link -> references a pathname
+
+Remove one hard link -> other hard links still work
+
+Remove symlink target -> symlink becomes broken
+
+Restore target pathname -symlink can work again
+
+'rm link' -> remove the symbolic link itself
+
+## Working with Archives and Compressed Files
+
+
+
