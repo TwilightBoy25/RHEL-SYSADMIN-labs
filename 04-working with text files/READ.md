@@ -33,3 +33,47 @@ Use controls while inside 'less':
 | 'q' | Quit 'less' |
 
 ### Using 'less' with Pipes
+
+Command output can be piped into 'less':
+
+'''bash
+ps aux | less 
+'''
+
+The pipe sends the standard output of 'ps aux' to the standard input of 'less'.
+
+'''text
+ps aux -> STDOUT -> | STDIN -> less
+'''
+
+'ps aux' displays a detailed list of running processes. For this section, the important concept is using ' | less' to make long command output easier to browse.
+
+### Viewing Files with 'cat'
+
+'cat' displays the contents of a file directly in the terminal:
+
+'''bash
+cat /etc/passwd
+'''
+
+'cat' is convenient for short files. For longer files, 'less' is usually easier because it provides navigation and searching. 
+
+### Quick Mental Model
+
+'''text
+cat -> show me everything
+less -> let me browse this
+head -> show me the beginning
+tail -> show me the end
+cut -> give me specific parts
+sort -> put this in order
+wc -> count this
+'''
+
+### 'less' vs 'cat' 
+
+'''text
+Short file / quick output -> cat
+Long file / need navigation -> less
+'''
+
