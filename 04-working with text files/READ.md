@@ -77,3 +77,61 @@ Short file / quick output -> cat
 Long file / need navigation -> less
 '''
 
+## Displaying File Contents with 'head' and 'tail' 
+
+'head' and 'tail' display specific portions of text files.
+
+### Basic Commands
+
+| Command | Purpose |
+| --- | --- |
+| 'head FILE' | First 10 lines by default |
+| 'tail FILE; | Last 10 lines by default |
+| 'head -n 5 FILE' | First 5 lines |
+| 'tail -n 5 FILE' | Last 5 lines |
+| 'tail -f FILE' | Will show the last 10 lines following newly appended lines |
+
+### Specifying Lines
+
+The '-n' option specifies the number of lines. 
+
+'''bash
+head -n 5 /etc/passwd
+tail -n 5 /etc/passwd
+'''
+
+Current versions also support 'tail -5 as shorthand for 'tail -n 5'.
+
+### Monitoring Log Files
+
+'''bash
+sudo tail -f /var/log/messages
+'''
+
+'-f' follows the file and displays new lines as they are appended. This is useful for troubleshooting system logs. 
+
+Press 'Ctrl+C' to stop monitoring.
+
+### Combining 'head' and 'tail'
+
+Display only line 11 of 'etc/passwd':
+
+'''bash
+head -n 11 /etc/passwd | tail -n 1
+'''
+
+1. 'head' outputs lines 1-11.
+2. The pipe passes that output to 'tail'.
+3. 'tail -n 1' displays only line 11.
+
+### Key Takeaways
+
+- 'head' = beginning of a file
+- 'tail' = end of a file
+- '-n' = number of lines
+- '-f' = follow new lines
+- 'Ctrl+C' = stop monitoring
+- Pipes combine commands to select specific lines
+
+
+
