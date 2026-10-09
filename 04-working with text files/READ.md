@@ -134,4 +134,44 @@ head -n 11 /etc/passwd | tail -n 1
 - Pipes combine commands to select specific lines
 
 
+## Filtering and Sorting Text
 
+### 1. The cut command
+
+The cut command extracts specific fields or columns from text
+
+It is useful when working with structured files such as /etc/passwd
+
+Important options: 
+- -d = Defines the delimited (character separating fields)
+- -f = Specifies which field(s) to extract
+
+Example: 
+
+'''Bash
+cut -d ':' -f 1 /etc/passwd
+'''
+
+Explanation:
+- -d ':' tells Linux that fields are separated by colons
+- -f 1 selects the first field
+- /etc/passwd is the file being processed
+
+  This command displays usernames because the first field in /etc/passwd contains the usernmae
+
+  To extract multiple fields:
+
+  '''Bash
+  cut -d ':' -f 1,3 /etc/passwd
+  '''
+
+  This displays usernames and their user IDs (UIDs)
+
+### 2. The sort Command
+
+The sort command arranges lines of text into a specified order
+
+By default, sorting is lexicographic, which means numbers are not necessarily sorted by their numerical value 
+
+Important options:
+* -n = Sort numerically
