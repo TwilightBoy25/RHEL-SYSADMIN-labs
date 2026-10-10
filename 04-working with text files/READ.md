@@ -175,3 +175,84 @@ By default, sorting is lexicographic, which means numbers are not necessarily so
 
 Important options:
 * -n = Sort numerically
+* -r = Reverse the sorting order
+* -k = Specify which field to sort by
+* -t = Specify a field delimited
+
+Examples: 
+
+'''Bash
+sort /etc/passwd
+'''
+
+Sort the lines of /etc/passwd lexically
+
+'''Bash
+sort -n numbers.txt
+'''
+
+Sorts the lines in numbers.txt numerically
+
+'''Bash
+sort -rn numbers.txt 
+'''
+
+Sorts numbers from highest to lowest 
+
+### 3. Combining cut and sort with Pipes
+
+Pipes (|) send STDOUT from one command to STDIN of another command.
+
+Example 1 - Alphabetically sort usernames:
+
+'''Bash
+cut -d ':' -f 1 /etc/passwd | sort
+'''
+
+First, cut extracts the usernames. Then sort arranges them alphabetically
+
+Example 2 - Numerically sort UIDs:
+
+'''Bash
+cut -d ':' -f 3 /etc/passwd | sort -n 
+'''
+
+First, cut extacts the third field (UID). Then sort -n arranges those values numerically
+
+4. Sorting Linux Processes
+
+The ps aux command displays information about running processes
+
+Its fourth column contains memory usage percentage (%MEM).
+
+'''Bash
+ps aux | sort -k 4 -n
+'''
+
+Explanation:
+* ps aux displays running processes
+* | passes the output to sort
+* -k 4 sorts using the fourth column
+* -n sorts numerically
+
+To show the highest memory usage first:
+
+'''Bash
+ps aux | sort -l 4 -nr
+'''
+
+Note: These commands also sort the header row, so the header may not remain at the top
+
+### 5. Key Takeaways
+
+* cut = Extract specific fields
+* sort = Arrange lines in order
+* -d = Delimited for cut
+* -f = Field selection for cut
+* -k = Sorting field for sort
+* -n = Numerical sorting
+* -r = Reverse sorting
+* | = Connect STDOUT to STDIN
+
+ 
+
