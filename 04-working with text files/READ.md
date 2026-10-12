@@ -254,5 +254,40 @@ Note: These commands also sort the header row, so the header may not remain at t
 * -r = Reverse sorting
 * | = Connect STDOUT to STDIN
 
- 
+ ## Chapter 4 — Text Processing: wc, grep, and Regex
+
+### Part 1 — wc
+wc counts lines, words, and bytes by default.
+- wc -l file.txt — count lines
+- wc -w file.txt — count words
+- wc -c file.txt — count bytes
+- wc -m file.txt — count characters
+
+### Part 2 — grep
+grep displays lines containing a matching pattern.
+- grep 'student' /etc/passwd — match student anywhere in a line
+- grep 'sshd' /var/log/secure — find lines containing sshd
+
+### Part 3 — Regex anchors
+- ^ — beginning of a line
+- $ — end of a line
+- grep '^student' users.txt — lines starting with student
+- grep 'student$' users.txt — lines ending with student
+- grep '^student$' users.txt — lines containing exactly student
+- grep '^student:' /etc/passwd — exact username field
+
+### Part 4 — Pipelines
+The pipe (|) passes STDOUT from one command into STDIN of another.
+- grep 'Failed password' /var/log/secure | wc -l — count matching log lines
+- grep '/bin/bash$' /etc/passwd | wc -l — count accounts whose shell ends in /bin/bash
+- ps aux | grep sshd — find process lines containing sshd
+
+### Lessons Learned
+1. Filter first, then count when counting matches.
+2. wc -l counts lines, not processes directly.
+3. ps aux includes a header line.
+4. grep searches anywhere in the line unless anchored.
+5. Quotes preserve patterns containing spaces.
+6. ^ and $ together restrict a match to the entire line.
+
 
